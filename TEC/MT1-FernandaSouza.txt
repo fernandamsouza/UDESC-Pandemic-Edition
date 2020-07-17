@@ -1,0 +1,63 @@
+; Fernanda Maria de Souza
+
+0 0 y r 1
+0 1 z r 1
+
+1 _ _ l 2
+1 0 0 r 1
+1 1 1 r 1
+
+2 0 x r 3y
+2 1 x r 3z
+
+3y x x r 3y
+3y 0 0 r 3y
+3y 1 1 r 3y
+3y _ 0 l 4
+
+3z x x r 3z
+3z 0 0 r 3z
+3z 1 1 r 3z
+3z _ 1 l 4
+
+4 0 0 l 4
+4 1 1 l 4
+4 x x l 5
+
+5 0 0 * 2
+5 1 1 * 2
+5 x x l 5
+5 y y r 6y
+5 z z r 6z
+ 
+6z 0 0 r 6z
+6z 1 1 r 6z
+6z x x r 6z
+6z _ 1 * 7
+
+6y 0 0 r 6y
+6y 1 1 r 6y
+6y x x r 6y
+6y _ 0 * 7
+
+7 0 _ l 8y
+7 1 _ l 8z
+
+8y 0 0 l 8y
+8y 1 1 l 8y
+8y x 0 r 9
+8y y 0 * accept
+8y z 0 * accept
+
+
+8z 0 0 l 8z
+8z 1 1 l 8z
+8z x 1 r 9
+8z y 1 * accept
+8z z 1 * accept
+
+9 0 0 r 9
+9 1 1 r 9
+9 _ _ l 7
+
+accept * * * halt-accept

@@ -1,0 +1,95 @@
+; Fernanda Maria de Souza
+
+0 0 o r 1
+0 1 i r 1
+
+1 0 0 r 1
+1 1 1 r 1
+1 # # r 1
+1 _ $ l 2
+
+2 0 0 l 2
+2 1 1 l 2
+2 $ $ l 2
+2 # # l 3
+
+3 0 x r 4o
+3 1 x r 4i
+3 x x l 3
+3 i C r 4i
+3 o C r 4o
+3 C C r 6
+
+4i 0 0 r 4i
+4i 1 1 r 4i
+4o 0 0 r 4o
+4o 1 1 r 4o
+4i x x r 4i
+4o x x r 4o
+4i $ $ r 5i
+4o $ $ r 5o
+4i # # r 4i
+4o # # r 4o
+
+5i 0 0 r 5i
+5o 0 0 r 5o
+5i 1 1 r 5i
+5o 1 1 r 5o
+5o _ 0 l 2
+5i _ 1 l 2 
+
+6 0 0 r 6
+6 1 1 r 6
+6 x x r 6
+6 # # r 6
+6 $ $ r 7
+
+7 0 o l 8o
+7 1 i l 8i
+
+8i 0 0 l 8i
+8o 0 0 l 8o
+8o 1 1 l 8o
+8i 1 1 l 8i
+8i i i l 8i
+8i o o l 8i
+8o i i l 8o
+8o o o l 8o
+8i y y r 9i
+8o y y r 9o
+8o # # r 9o
+8i # # r 9i
+8i $ $ l 8i
+8o $ $ l 8o
+
+9i 0 0 r 12
+9o 0 y r 10
+9i 1 y r 10
+9o 1 1 r 12
+9i $ $ * halt-reject
+9o $ $ * halt-reject
+
+
+10 0 0 r 10
+10 1 1 r 10
+10 i i r 11
+10 o o r 11
+10 $ $ r 10
+
+11 0 0 * 7
+11 1 1 * 7
+11 i i r 11
+11 o o r 11
+11 _ _ * halt-accept
+
+12 0 0 r 12
+12 1 1 r 12
+12 $ $ r 13
+
+13 o 0 r 13
+13 i 1 r 13
+13 _ _ l 14
+
+14 0 0 l 14
+14 1 1 l 14
+14 $ $ r 7

@@ -1,0 +1,7 @@
+; Fernanda Maria de Souza
+
+0 * * r 0
+0 _ _ l 1
+
+1 1 0 l halt-accept
+1 0 1 l 1
