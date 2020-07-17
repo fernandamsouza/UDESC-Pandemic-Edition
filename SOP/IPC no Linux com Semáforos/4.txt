@@ -1,0 +1,20 @@
+int n = 1;
+
+sem_t s0=0, s1=0;
+
+void *x (void *argp) {
+	n = n*16;        3: n=16;
+	up(&s0);	4: s0: -1 -> 0 (desbl z)
+}
+
+void *y (void *argp) {
+	down (&s1);     1: s1: 0-> -1 (b1)
+	n = n/7;	7: n = 56/7 = 8	
+}
+
+void *z (void *argp) {
+	down (&s0);     2: s0: 0 -> -1 (b1)
+	n = n + 40;	5: n=56
+	up(&s1);	6: s1: -1 -> 0 (desb y)
+}
+	

@@ -1,0 +1,39 @@
+sem_t pm=0, pd=0, md=0; // m=memoria, d = disco, p = processador.
+sem_t g=0;
+
+void gerente() {
+	while (TRUE) {
+		rec = escolhe_recursos(); 3: rec = PROC_DISCO
+		if (rec == PROC_MEM) { 	  4
+			up(&pm);
+		} else if (rec == PROC_DISCO) { 5
+			up(&pd);                6: pd -> -1 -> 0 (desb p2)
+			up(&pd);
+		} else {
+			up(&md);
+		}
+		down(&g); 		7: g: 0 -> -1 (bloq)
+	}
+}
+
+void p1() {
+	faz_algo();
+	down(&pm);	1: pm: 0-> -1 (b1)
+	come_proc_memoria();
+	up(&g);
+}
+
+void p2() {
+	faz_algo();
+	down(&pd);	   2: pd: -1 -> -2 (b1)
+	come_proc_disco(); 8
+	up(&g);            9: g: -1 -> 0 (desb ger)
+}
+
+void p3() {
+	down(&md);     3: md: 0 -> -1 (b1)
+	come_proc_disco();
+	up(&g);
+}
+
+

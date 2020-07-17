@@ -1,0 +1,26 @@
+enum {LIVRE, OCUP };
+semaphore mutex = 1;
+semaphore livres = MAX;
+int lugares[MAX] = LIVRE;
+
+void quiosque() {
+	int lug, pg_ok;
+	while (TRUE) {
+		down (&livres);
+		down (&mutex);
+		do {
+			lug = escolhe_lugar();
+		} while (lugares(lug) == OCUP);
+		lugares[lug] = OCUP;
+		up (&mutex);
+		pg_ok = autoriza_pagamento();
+		if (!pg_ok) {
+			down(&mutex);
+			lugares[lug] = LIVRE;
+			up(&mutex);	
+			up(&livres);
+		} else {
+			imprime_bilhete(lug);
+		}
+	}
+}
