@@ -1,0 +1,11 @@
+﻿;;;;
+;;;;
+;;;;
+;;;;
+;;Bytes in Flight (% do total da captura e número de pacotes);;
+Duração em minutos;Versão da Captura;Dispositivo 1;Dispositivo 2;Dispositivo 3
+5;Captura 1;0.2 % - 257;0.7% -773;0.3 % - 486
+;Captura 2;0.2% - 190;0.5% - 614;0.2 % - 306
+30;Captura 1;0.3% - 1547;0.5% - 3300; 0.4% - 3029
+;;;;
+;;;;
